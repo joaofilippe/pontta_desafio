@@ -1,0 +1,19 @@
+<div class='container'>
+    <div *ngIf='loading'>
+        <p>Carregando clients</p>
+    </div>
+
+    <div class='row'>
+        <div class='card mt-2 d-flex align-items-center'
+            *ngFor="let client of clients">
+            <p>{{client.id}}-{{client.name}}</p>
+            <p>{{client.email}}</p>
+            <p>{{client.city}}</p>
+
+            <button class='btn btn-primary mt-1'
+                (click)='navigateToEdit(client.id)'>Editar</button>
+            <button (click)='onDeleteClick(client.id)'
+                class='btn btn-primary mt-1'>Deletar</button>
+        </div>
+    </div>
+</div>
